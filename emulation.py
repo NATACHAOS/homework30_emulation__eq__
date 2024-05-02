@@ -1,18 +1,18 @@
 class Building:
-    def __init__(self, *args):
-        self.numberOfFloors = int()
-        self.buildingType = str()
+    """Здание"""
+
+    def __init__(self):
+        self.numberOfFloors = 10  # атрибут этажности
+        self.buildingType = 'Здание'  # название
 
     def __eq__(self, other):
-        return self.numberOfFloors == self.buildingType
-
+        return self.numberOfFloors == other.numberOfFloors and self.buildingType == other.buildingType
+        # сравниваем одинаковые атрибуты этажности и названия
 
 obj1 = Building()
 obj2 = Building()
+print(obj1 == obj2)
 
-if Building.__eq__(self=obj1, other=obj2):
-    print('Мы равны)')
-else:
-    print('Мы не равны')
-
+obj2.numberOfFloors = 10
+obj2.buildingType = 'Сооружение' # "Здание" не "Сооружение". На консоли выводится False
 print(obj1 == obj2)
